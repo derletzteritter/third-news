@@ -2,9 +2,11 @@ import React from 'react';
 import { HeaderContainer, HeaderSection, LoginButton } from './styles/Header.styles';
 import { themeIcons } from '../../icons/svgProvider';
 import { useColorMode } from '../../states/theme.state';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode();
+  const navigate = useNavigate();
 
   const toggleColorMode = () => {
     setColorMode((curVal) => {
@@ -15,10 +17,7 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderSection>
-        <h2>Third News</h2>
-      </HeaderSection>
-      <HeaderSection>
-        <h4>News</h4>
+        <h2 onClick={() => navigate('/')}>Third News</h2>
       </HeaderSection>
       <HeaderSection>
         <span
@@ -33,7 +32,7 @@ const Header: React.FC = () => {
         >
           {colorMode === 'light' ? themeIcons.dark : themeIcons.light}
         </span>
-        <LoginButton>Login</LoginButton>
+        <LoginButton onClick={() => navigate('/login')}>Login</LoginButton>
       </HeaderSection>
     </HeaderContainer>
   );

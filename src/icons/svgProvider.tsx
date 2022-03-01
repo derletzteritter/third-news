@@ -7,6 +7,7 @@ export const themeIcons = {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
+      className="lightModeIcon"
     >
       <path
         strokeLinecap="round"
@@ -24,6 +25,7 @@ export const themeIcons = {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
+      className="darkModeIcon"
     >
       <path
         strokeLinecap="round"
