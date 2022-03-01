@@ -9,3 +9,15 @@ export const themeLight = {
     buttonHover: '#212121',
   },
 };
+
+export const themeDark = {
+  text: {
+    primary: '#fff',
+    button: '#000',
+  },
+  background: {
+    primary: '#000',
+    button: '#fff',
+    buttonHover: '#212121',
+  },
+};

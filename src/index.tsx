@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from '@emotion/react';
-import { themeLight } from './theme/theme';
+import { RecoilRoot } from 'recoil';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={themeLight}>
+    <RecoilRoot>
       <App />
-    </ThemeProvider>
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root'),
 );

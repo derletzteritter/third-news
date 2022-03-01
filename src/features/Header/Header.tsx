@@ -1,8 +1,17 @@
 import React from 'react';
 import { HeaderContainer, HeaderSection, LoginButton } from './styles/Header.styles';
 import { themeIcons } from '../../icons/svgProvider';
+import { useColorMode } from '../../states/theme.state';
 
 const Header: React.FC = () => {
+  const [colorMode, setColorMode] = useColorMode();
+
+  const toggleColorMode = () => {
+    setColorMode((curVal) => {
+      return curVal === 'light' ? 'dark' : 'light';
+    });
+  };
+
   return (
     <HeaderContainer>
       <HeaderSection>
@@ -13,14 +22,16 @@ const Header: React.FC = () => {
       </HeaderSection>
       <HeaderSection>
         <span
+          onClick={toggleColorMode}
           style={{
+            cursor: 'pointer',
             paddingRight: 10,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          {themeIcons.dark}
+          {colorMode === 'light' ? themeIcons.dark : themeIcons.light}
         </span>
         <LoginButton>Login</LoginButton>
       </HeaderSection>

@@ -10,10 +10,12 @@ export const HeaderContainer = styled('div')(({ theme }) => ({
   borderBottom: `1px solid ${theme.text.primary}`,
 }));
 
-export const HeaderSection = styled('div')(() => ({
+export const HeaderSection = styled('div')(({ theme }) => ({
   fontFamily: "'Vollkorn', serif",
   marginLeft: 20,
   marginRight: 20,
+  color: theme.text.primary,
+  userSelect: 'none',
   display: 'flex',
   fontSize: 18,
   justifyContent: 'center',
